@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D45E93DA1A14E6DF009EA945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E93D91A14E6DF009EA945 /* main.m */; };
+		D45E93DD1A14E6DF009EA945 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E93DC1A14E6DF009EA945 /* AppDelegate.m */; };
+		D45E93E01A14E6DF009EA945 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E93DF1A14E6DF009EA945 /* ViewController.m */; };
+		D45E93E31A14E6DF009EA945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45E93E11A14E6DF009EA945 /* Main.storyboard */; };
+		D45E93E51A14E6DF009EA945 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45E93E41A14E6DF009EA945 /* Images.xcassets */; };
+		D45E93E81A14E6DF009EA945 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D45E93E61A14E6DF009EA945 /* LaunchScreen.xib */; };
+		D45E93F41A14E6DF009EA945 /* AQSEventTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E93F31A14E6DF009EA945 /* AQSEventTests.m */; };
+		D45E94001A14E7B0009EA945 /* AQSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E93FF1A14E7B0009EA945 /* AQSEvent.m */; };
+		D45E94031A14E7E2009EA945 /* AQSEventObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E94021A14E7E2009EA945 /* AQSEventObserver.m */; };
+		D9D396967D961D3B8742DB15 /* libPods-AQSEventTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19AF9BFA8AE2F68055A9E869 /* libPods-AQSEventTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D45E93EE1A14E6DF009EA945 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D45E93CC1A14E6DF009EA945 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D45E93D31A14E6DF009EA945;
+			remoteInfo = AQSEvent;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		19AF9BFA8AE2F68055A9E869 /* libPods-AQSEventTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AQSEventTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDF11A99FCCBABBFAB3A2A21 /* Pods-AQSEventTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AQSEventTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AQSEventTests/Pods-AQSEventTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D45E93D41A14E6DF009EA945 /* AQSEvent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AQSEvent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D45E93D81A14E6DF009EA945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D45E93D91A14E6DF009EA945 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D45E93DB1A14E6DF009EA945 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D45E93DC1A14E6DF009EA945 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D45E93DE1A14E6DF009EA945 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D45E93DF1A14E6DF009EA945 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D45E93E21A14E6DF009EA945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D45E93E41A14E6DF009EA945 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D45E93E71A14E6DF009EA945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D45E93ED1A14E6DF009EA945 /* AQSEventTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AQSEventTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D45E93F21A14E6DF009EA945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D45E93F31A14E6DF009EA945 /* AQSEventTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AQSEventTests.m; sourceTree = "<group>"; };
+		D45E93FE1A14E7B0009EA945 /* AQSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQSEvent.h; sourceTree = "<group>"; };
+		D45E93FF1A14E7B0009EA945 /* AQSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQSEvent.m; sourceTree = "<group>"; };
+		D45E94011A14E7E2009EA945 /* AQSEventObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQSEventObserver.h; sourceTree = "<group>"; };
+		D45E94021A14E7E2009EA945 /* AQSEventObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQSEventObserver.m; sourceTree = "<group>"; };
+		E318ABB6608B403A82B64E1A /* Pods-AQSEventTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AQSEventTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AQSEventTests/Pods-AQSEventTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D45E93D11A14E6DF009EA945 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D45E93EA1A14E6DF009EA945 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9D396967D961D3B8742DB15 /* libPods-AQSEventTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C0D41975AC8A9CCFA0A1AB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BDF11A99FCCBABBFAB3A2A21 /* Pods-AQSEventTests.debug.xcconfig */,
+				E318ABB6608B403A82B64E1A /* Pods-AQSEventTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		676222A75F717239C3EB74A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19AF9BFA8AE2F68055A9E869 /* libPods-AQSEventTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D45E93CB1A14E6DF009EA945 = {
+			isa = PBXGroup;
+			children = (
+				D45E93D61A14E6DF009EA945 /* AQSEvent */,
+				D45E93F01A14E6DF009EA945 /* AQSEventTests */,
+				D45E93D51A14E6DF009EA945 /* Products */,
+				4C0D41975AC8A9CCFA0A1AB2 /* Pods */,
+				676222A75F717239C3EB74A2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D45E93D51A14E6DF009EA945 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D45E93D41A14E6DF009EA945 /* AQSEvent.app */,
+				D45E93ED1A14E6DF009EA945 /* AQSEventTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D45E93D61A14E6DF009EA945 /* AQSEvent */ = {
+			isa = PBXGroup;
+			children = (
+				D45E93FD1A14E7A5009EA945 /* Classes */,
+				D45E93DB1A14E6DF009EA945 /* AppDelegate.h */,
+				D45E93DC1A14E6DF009EA945 /* AppDelegate.m */,
+				D45E93DE1A14E6DF009EA945 /* ViewController.h */,
+				D45E93DF1A14E6DF009EA945 /* ViewController.m */,
+				D45E93E11A14E6DF009EA945 /* Main.storyboard */,
+				D45E93E41A14E6DF009EA945 /* Images.xcassets */,
+				D45E93E61A14E6DF009EA945 /* LaunchScreen.xib */,
+				D45E93D71A14E6DF009EA945 /* Supporting Files */,
+			);
+			path = AQSEvent;
+			sourceTree = "<group>";
+		};
+		D45E93D71A14E6DF009EA945 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D45E93D81A14E6DF009EA945 /* Info.plist */,
+				D45E93D91A14E6DF009EA945 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D45E93F01A14E6DF009EA945 /* AQSEventTests */ = {
+			isa = PBXGroup;
+			children = (
+				D45E93F31A14E6DF009EA945 /* AQSEventTests.m */,
+				D45E93F11A14E6DF009EA945 /* Supporting Files */,
+			);
+			path = AQSEventTests;
+			sourceTree = "<group>";
+		};
+		D45E93F11A14E6DF009EA945 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D45E93F21A14E6DF009EA945 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D45E93FD1A14E7A5009EA945 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D45E93FE1A14E7B0009EA945 /* AQSEvent.h */,
+				D45E93FF1A14E7B0009EA945 /* AQSEvent.m */,
+				D45E94011A14E7E2009EA945 /* AQSEventObserver.h */,
+				D45E94021A14E7E2009EA945 /* AQSEventObserver.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D45E93D31A14E6DF009EA945 /* AQSEvent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D45E93F71A14E6DF009EA945 /* Build configuration list for PBXNativeTarget "AQSEvent" */;
+			buildPhases = (
+				D45E93D01A14E6DF009EA945 /* Sources */,
+				D45E93D11A14E6DF009EA945 /* Frameworks */,
+				D45E93D21A14E6DF009EA945 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AQSEvent;
+			productName = AQSEvent;
+			productReference = D45E93D41A14E6DF009EA945 /* AQSEvent.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D45E93EC1A14E6DF009EA945 /* AQSEventTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D45E93FA1A14E6DF009EA945 /* Build configuration list for PBXNativeTarget "AQSEventTests" */;
+			buildPhases = (
+				FE9E5740E75AE5F76E60BB6B /* Check Pods Manifest.lock */,
+				D45E93E91A14E6DF009EA945 /* Sources */,
+				D45E93EA1A14E6DF009EA945 /* Frameworks */,
+				D45E93EB1A14E6DF009EA945 /* Resources */,
+				42E67C3DADE7DB8C335C3E4A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D45E93EF1A14E6DF009EA945 /* PBXTargetDependency */,
+			);
+			name = AQSEventTests;
+			productName = AQSEventTests;
+			productReference = D45E93ED1A14E6DF009EA945 /* AQSEventTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D45E93CC1A14E6DF009EA945 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Aquamarine;
+				TargetAttributes = {
+					D45E93D31A14E6DF009EA945 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					D45E93EC1A14E6DF009EA945 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = D45E93D31A14E6DF009EA945;
+					};
+				};
+			};
+			buildConfigurationList = D45E93CF1A14E6DF009EA945 /* Build configuration list for PBXProject "AQSEvent" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D45E93CB1A14E6DF009EA945;
+			productRefGroup = D45E93D51A14E6DF009EA945 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D45E93D31A14E6DF009EA945 /* AQSEvent */,
+				D45E93EC1A14E6DF009EA945 /* AQSEventTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D45E93D21A14E6DF009EA945 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D45E93E31A14E6DF009EA945 /* Main.storyboard in Resources */,
+				D45E93E81A14E6DF009EA945 /* LaunchScreen.xib in Resources */,
+				D45E93E51A14E6DF009EA945 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D45E93EB1A14E6DF009EA945 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		42E67C3DADE7DB8C335C3E4A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AQSEventTests/Pods-AQSEventTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE9E5740E75AE5F76E60BB6B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D45E93D01A14E6DF009EA945 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D45E94001A14E7B0009EA945 /* AQSEvent.m in Sources */,
+				D45E94031A14E7E2009EA945 /* AQSEventObserver.m in Sources */,
+				D45E93E01A14E6DF009EA945 /* ViewController.m in Sources */,
+				D45E93DD1A14E6DF009EA945 /* AppDelegate.m in Sources */,
+				D45E93DA1A14E6DF009EA945 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D45E93E91A14E6DF009EA945 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D45E93F41A14E6DF009EA945 /* AQSEventTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D45E93EF1A14E6DF009EA945 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D45E93D31A14E6DF009EA945 /* AQSEvent */;
+			targetProxy = D45E93EE1A14E6DF009EA945 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D45E93E11A14E6DF009EA945 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D45E93E21A14E6DF009EA945 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D45E93E61A14E6DF009EA945 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D45E93E71A14E6DF009EA945 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D45E93F51A14E6DF009EA945 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D45E93F61A14E6DF009EA945 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D45E93F81A14E6DF009EA945 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AQSEvent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D45E93F91A14E6DF009EA945 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AQSEvent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D45E93FB1A14E6DF009EA945 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDF11A99FCCBABBFAB3A2A21 /* Pods-AQSEventTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AQSEventTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AQSEvent.app/AQSEvent";
+			};
+			name = Debug;
+		};
+		D45E93FC1A14E6DF009EA945 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E318ABB6608B403A82B64E1A /* Pods-AQSEventTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AQSEventTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AQSEvent.app/AQSEvent";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D45E93CF1A14E6DF009EA945 /* Build configuration list for PBXProject "AQSEvent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D45E93F51A14E6DF009EA945 /* Debug */,
+				D45E93F61A14E6DF009EA945 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D45E93F71A14E6DF009EA945 /* Build configuration list for PBXNativeTarget "AQSEvent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D45E93F81A14E6DF009EA945 /* Debug */,
+				D45E93F91A14E6DF009EA945 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D45E93FA1A14E6DF009EA945 /* Build configuration list for PBXNativeTarget "AQSEventTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D45E93FB1A14E6DF009EA945 /* Debug */,
+				D45E93FC1A14E6DF009EA945 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D45E93CC1A14E6DF009EA945 /* Project object */;
+}

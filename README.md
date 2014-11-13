@@ -40,11 +40,18 @@ And this is just an `NSNotification`. No magicically things. Easy to understand.
 Implementation
 ---
 
-I provide a helper to post / subscribe Events.
+`AQSEvent` provide a helper to post / subscribe Events.
 
 ### Posting an Event
 
-Measurement Event constants are defined at `AQSEvent.h` so it can be write as follows
+```objc
+[AQSEvent event:@"location/changed" args:@{
+    @"latitude": @(40.712784),
+    @"longitude": @(-74.005941)
+}];
+```
+
+This is a shorthand for following code.
 
 ```objc
 [[NSNotificationCenter defaultCenter] postNotification:kAQSEvent object:nil userInfo:@{
@@ -56,36 +63,29 @@ Measurement Event constants are defined at `AQSEvent.h` so it can be write as fo
 }];
 ```
 
-And for shorthand, `AQSEvent.m` provides a helper method.
-
-```objc
-[AQSEvent event:@"location/changed" args:@{
-    @"latitude": @(40.712784),
-    @"longitude": @(-74.005941)
-}];
-```
-
 ### Subscribing Events
 
 Subscribe to events are also easy.
 
-```objc
-[[NSNotificationCenter defaultCenter] addObserver:kAQSEvent selector:@selector(subscribeEvent:) object:nil];
-```
-
-For shorthand and convenience of removing observer, `AQSEventObserver.m` provides a helper.
+`AQSEvent` provides a helper.
 
 ```objc
 @property (nonatomic, strong) AQSEventObserver *eventObserver;
 
 // Then in @implementation,
 
-self.eventObserver = [AQSEventObserver observerWithBlock:^(NSString *eventName, NSDictionary *args) {
+self.eventObserver = [AQSEvent observeWithBlock:^(NSString *eventName, NSDictionary *eventArgs) {
     // Do something
 }];
 ```
 
-`AQSEventObserver` removes observer on `- dealloc` so you do not have to worry about memory leak due to forgetting `- removeObserver`.
+This is a shorthand for following code.
+
+```objc
+[[NSNotificationCenter defaultCenter] addObserver:kAQSEvent selector:@selector(subscribeEvent:) object:nil];
+```
+
+`AQSEventObserver` automatically does `- removeObserver:` on `- dealloc`. No more memory leak as long as you use `AQSEvent` to observe events.
 
 Testing Events
 ---
@@ -108,7 +108,11 @@ Or to test the content of the notification, do as follows
 
 ```objc
 NSNotification *notification = [NSNotification notificationWithName:kAQSEvent withObject:nil withUserInfo:@{
-    kAQSEventName: @"some/evemt"
+    kAQSEventName: @"some/evemt",
+    kAQSEventArgs: @{
+        @"key1": @"value1",
+        @"key2": @"value2"
+    }
 }];
 
 expect(^{
