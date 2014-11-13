@@ -122,6 +122,13 @@ expect(^{
 
 Testing tracking codes are also easy. Just post a notification and verify that invokes the tracking code.
 
+Installation
+---
+
+```
+pod "AQSEvent"
+```
+
 References
 ---
 
