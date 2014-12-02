@@ -10,21 +10,35 @@
 
 #import "AQSEventObserver.h"
 
-NSString *const kAQSEvent = @"com.parse.bolts.measurement_event";
+NSString *const kAQSEvent = @"org.openaquamarine.measurement_event";
 NSString *const kAQSEventName = @"event_name";
 NSString *const kAQSEventArgs = @"event_args";
 
 @implementation AQSEvent
 
-+ (void)event:(NSString *)name args:(NSDictionary *)args {
-    [[NSNotificationCenter defaultCenter] postNotificationName:kAQSEvent object:nil userInfo:@{
-                                                                                               kAQSEventName: name,
-                                                                                               kAQSEventArgs: args
-                                                                                               }];
++ (void)postEvent:(NSString *)name {
+    [self postEvent:name args:nil];
+}
+
++ (void)postEvent:(NSString *)name args:(NSDictionary *)args {
+    if (args == nil) { args = @{}; }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kAQSEvent
+                                                        object:nil
+                                                      userInfo:@{
+                                                                 kAQSEventName: name,
+                                                                 kAQSEventArgs: args
+                                                                 }];
 }
 
 + (AQSEventObserver *)observeWithBlock:(void (^)(NSString *, NSDictionary *))block {
     return [AQSEventObserver observerWithBlock:block];
+}
+
+# pragma mark - Deprecated Methods
+
++ (void)event:(NSString *)name args:(NSDictionary *)args {
+    [self postEvent:name args:args];
 }
 
 @end

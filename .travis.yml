@@ -7,10 +7,6 @@ branches:
 notifications:
   email: false
 
-before_install:
-  - gem install cocoapods
-  - gem install xcpretty
-
 before_script: pod install
 
-script: bash ./.travis_test.sh
+script: make test

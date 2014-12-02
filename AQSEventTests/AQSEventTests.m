@@ -31,36 +31,43 @@
 }
 
 - (void)testItPostsMeasurementEvent {
-    expect(^{
-        [AQSEvent event:@"name" args:@{}];
-    }).notify(@"com.parse.bolts.measurement_event");
+    XCTestExpectation *expectation = [self expectationForNotification:kAQSEvent object:nil handler:^BOOL(NSNotification *notification) {
+        [expectation fulfill];
+        
+        return YES;
+    }];
+    
+    [AQSEvent postEvent:@"name" args:@{@"key": @"value"}];
+    
+    [self waitForExpectationsWithTimeout:1.0 handler:nil];
 }
 
 - (void)testItPostsEventWithPassedNameAndArgs {
-    NSDictionary *userInfo = @{
-                               kAQSEventName: @"name",
-                               kAQSEventArgs: @{
-                                       @"key": @"value"
-                                       }
-                               };
-    NSNotification *notification = [NSNotification notificationWithName:kAQSEvent object:nil userInfo:userInfo];
+    XCTestExpectation *expectation = [self expectationForNotification:kAQSEvent object:nil handler:^BOOL(NSNotification *notification) {
+        [expectation fulfill];
+        
+        NSString *eventName = notification.userInfo[kAQSEventName];
+        NSDictionary *eventArgs = notification.userInfo[kAQSEventArgs];
+        
+        return ([eventName isEqualToString:@"name"] && [eventArgs isEqualToDictionary:@{@"key": @"value"}]);
+    }];
     
-    expect(^{
-        [AQSEvent event:@"name" args:@{@"key": @"value"}];
-    }).notify(notification);
+    [AQSEvent postEvent:@"name" args:@{@"key": @"value"}];
+    
+    [self waitForExpectationsWithTimeout:1.0 handler:nil];
 }
 
 - (void)testItObservesEvent {
     __block NSString *name = nil;
+    
     [AQSEvent observeWithBlock:^(NSString *eventName, NSDictionary *eventArgs) {
         name = eventName;
     }];
-    
-    [AQSEvent event:@"name" args:@{
+    [AQSEvent postEvent:@"name" args:@{
                                    @"key": @"value"
                                    }];
     
-    expect(name).will.equal(@"name");
+    XCTAssertEqualObjects(name, @"name");
 }
 
 - (void)testItObservesManualMeasurementEvent {
@@ -76,12 +83,10 @@
         name = eventName;
         args = eventArgs;
     }];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"com.parse.bolts.measurement_event" object:nil userInfo:userInfo];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kAQSEvent object:nil userInfo:userInfo];
     
-    expect(name).will.equal(@"name");
-    expect(args).will.equal(@{
-                              @"key": @"value"
-                              });
+    XCTAssertEqualObjects(name, @"name");
+    XCTAssertEqualObjects(args, @{@"key": @"value"});
 }
 
 @end
