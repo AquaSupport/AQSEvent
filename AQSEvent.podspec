@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "AQSEvent"
   s.version      = "0.1.0"
-  s.summary      = "[iOS] A helper of Bolt's Measurement Event"
+  s.summary      = "[iOS] A helper for Measurement Events"
   s.homepage     = "https://github.com/AquaSupport/AQSEvent"
   s.license      = "MIT"
   s.author       = { "kaiinui" => "lied.der.optik@gmail.com" }
