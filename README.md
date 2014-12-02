@@ -1,20 +1,41 @@
 AQSEvent
 ========
 
-Introducing a concept of Bolt's Measurement Event: **`NSNotification` as Event for Tracking**
+Measurement Events: **`NSNotification` as Event for Tracking**
+
+Usage
+---
+
+Post a measurement event.
+
+```objc
+[AQSEvent postEvent:@"event_name" args:@{
+    @"key": @"value"
+}];
+```
+
+Observe measurement events.
+
+```objc
+self.observer = [AQSEvent observeWithBlock:^(NSString *eventName, NSDictionary *eventArgs) {
+    // Do something with arguments.
+    //
+    // Typically perform actual tracking events in this block.
+}];
+```
 
 Protocol
 ---
 
-1. **Event**'s notification name should be `com.parse.bolts.measurement_event`.
-2. **Event**'s notification should contain an userInfo that contains following values with keys
-  1. For key `event_name`, it should contain event name as `NSString`.
-  2. For key `event_args`, it should contain event parameters as `NSDictionary`.
+A measurement event is an `NSNotification` that conforms to following protocol.
+
+1. **Event**'s notification name should be always same.
+2. **Event**'s notification should contain an userInfo that contains following values
+  1. The userInfo should contain event name as `NSString`.
+  2. The userInfo should contain event parameters as `NSDictionary<NSString, id>`.
 
 Advantage?
 ---
-
-Putting tracking codes to iOS App is really harmful. This is because
 
 #### Testing method invocation is typically hard
 
@@ -30,10 +51,10 @@ Also 3rd pirty libraries do so.
 
 However there are too many `NSNotification` name and `userInfo` format. To use them for tracking events, we have to find which `NSNotification` are there, write a lot of `NSNotification` observers and parsing and re-formatting `userInfo` for each formats.
 
-### Bolt's Measurement Event might be The Holy Grail
+### Measurement Events might be The Holy Grail
 
 1. It is `NSNotification` based - It means you can test it with `Expecta`'s `notify()`
-2. You only have to track `NSNotification` whose name is `com.parse.bolts.measurement_event`. Only one observer. The format is unified. You only need to send the args to your analytics tracking code. (As most of analytics provides tracking an event with name and a dictionary params.)
+2. You only have to track `NSNotification` whose name is `kAQSEvent`. Only one observer. You only need to send the args to your analytics tracking code. (As most of analytics provides tracking an event with name and a dictionary params.)
 
 And this is just an `NSNotification`. No magicically things. Easy to understand.
 
@@ -45,7 +66,7 @@ Implementation
 ### Posting an Event
 
 ```objc
-[AQSEvent event:@"location/changed" args:@{
+[AQSEvent postEvent:@"location/changed" args:@{
     @"latitude": @(40.712784),
     @"longitude": @(-74.005941)
 }];
@@ -96,31 +117,21 @@ Assume you want to test that following method posts an Event for tracking.
 [someObject doSomething];
 ```
 
-Just use `Expecta`. You can achieve this with following code.
+`XCTestExpectation` helps you testing measurement events. And `AQSEvent` provides a helper category for easier testing.
 
 ```objc
-expect(^{
-    [someObejct doSomething];
-}).to.notify(kAQSEvent);
+- (void)testItPostsSomeMeasurementEvent {
+    XCTestExpectation *expectation = [self expectationForNotification:kAQSEvent object:nil handler:BOOL^(NSNotification *notification) {
+        [expectation fulfill];
+        
+        return [notification aqs_isEqualToMeasurementEvent:@"event_name" args:@{@"key": @"value"}];
+    }];
+    
+    [someObject doSomething]; // Assume it posts "event_name" event with {"key": "value"}
+    
+    [self waitForExpectationWithTimeout:1.0 handler:nil];
+}
 ```
-
-Or to test the content of the notification, do as follows
-
-```objc
-NSNotification *notification = [NSNotification notificationWithName:kAQSEvent withObject:nil withUserInfo:@{
-    kAQSEventName: @"some/evemt",
-    kAQSEventArgs: @{
-        @"key1": @"value1",
-        @"key2": @"value2"
-    }
-}];
-
-expect(^{
-    [someObject doSomething];
-}).to.notify(notification);
-```
-
-Testing tracking codes are also easy. Just post a notification and verify that invokes the tracking code.
 
 Installation
 ---
@@ -129,7 +140,7 @@ Installation
 pod "AQSEvent"
 ```
 
-References
+Related Projects
 ---
 
-- BoltsFramework/Bolts-iOS : https://github.com/BoltsFramework/Bolts-iOS#analytics
+- [AQSEventAggregator](https://github.com/AquaSupport/AQSEventAggregator) - Aggregates measurement events.
