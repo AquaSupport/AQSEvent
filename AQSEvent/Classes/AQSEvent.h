@@ -11,7 +11,13 @@
 # pragma mark - NSNotification Keys
 
 /**
- *  @notification kAQSEvent (a.k.a. `com.parse.bolts.measurement_event`)
+ *  @notification kAQSEvent
+ *  @object nil
+ *
+ *  ### userInfo
+ *
+ *  - kAQSEventName: NSString
+ *  - kAQSEventArgs: NSDictionary<NSString, id>
  */
 extern NSString *const kAQSEvent;
 
@@ -19,12 +25,10 @@ extern NSString *const kAQSEvent;
 
 /**
  *  kAQSEvent userInfo: NSString
- *  a.k.a. `event_name` of Bolt's measurement event
  */
 extern NSString *const kAQSEventName;
 /**
  *  kAQSEvent userInfo: NSDictionary
- *  a.k.a. `event_args` of Bolt's measurement event
  */
 extern NSString *const kAQSEventArgs;
 
@@ -33,25 +37,50 @@ extern NSString *const kAQSEventArgs;
 @class AQSEventObserver;
 
 /**
- *  A helper class for Bolt's measurement event.
+ *  A helper class for handling measurement events.
  */
 @interface AQSEvent : NSObject
 
+# pragma mark - Posting a Measurement Event
+/** @name Posting a Measurement Event */
+
 /**
- *  Post a Bolt's measurement event with passed name and args.
+ *  Post a measurement event with passed name.
+ *  With some arguments, use `+ postEvent:args:` instead.
+ *
+ *  @param name An event's name
+ */
++ (void)postEvent:(NSString *)name;
+
+/**
+ *  Post a measurement event with passed name and args.
  *
  *  @param name An event's name
  *  @param args An event's key-value args
  */
-+ (void)event:(NSString *)name args:(NSDictionary *)args;
++ (void)postEvent:(NSString *)name args:(NSDictionary *)args;
+
+# pragma mark - Observing Measurement Events
+/** @name Observing Measurement Events */
 
 /**
- *  Observe Bolt's measurement events with passed block.
+ *  Observe measurement events with passed block as long as the returned observer is retained.
  *
- *  @param block A block that is called when Bolt's measurement event is posted.
+ *  @param block A block that is called when a measurement event which is specified by eventName is posted.
  *
  *  @return An observer you should retain while the observation is needed.
  */
 + (AQSEventObserver *)observeWithBlock:(void(^)(NSString *eventName, NSDictionary *eventArgs))block;
+
+# pragma mark - Deprecated Methods
+/** @name Deprecated Methods */
+
+/**
+ *  Post a measurement event with passed name and args.
+ *
+ *  @param name An event's name
+ *  @param args An event's key-value args
+ */
++ (void)event:(NSString *)name args:(NSDictionary *)args __deprecated;
 
 @end

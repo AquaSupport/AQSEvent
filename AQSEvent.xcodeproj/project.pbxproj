@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D41020831A2D98DD009DBD33 /* NSNotification+AQSEventTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D41020821A2D98DD009DBD33 /* NSNotification+AQSEventTest.m */; };
+		D41020851A2D9AD4009DBD33 /* NSNotification_AQSEventTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D41020841A2D9AD4009DBD33 /* NSNotification_AQSEventTestTests.m */; };
 		D45E93DA1A14E6DF009EA945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E93D91A14E6DF009EA945 /* main.m */; };
 		D45E93DD1A14E6DF009EA945 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E93DC1A14E6DF009EA945 /* AppDelegate.m */; };
 		D45E93E01A14E6DF009EA945 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E93DF1A14E6DF009EA945 /* ViewController.m */; };
@@ -32,6 +34,9 @@
 /* Begin PBXFileReference section */
 		19AF9BFA8AE2F68055A9E869 /* libPods-AQSEventTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AQSEventTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF11A99FCCBABBFAB3A2A21 /* Pods-AQSEventTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AQSEventTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AQSEventTests/Pods-AQSEventTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D41020811A2D98DD009DBD33 /* NSNotification+AQSEventTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotification+AQSEventTest.h"; sourceTree = "<group>"; };
+		D41020821A2D98DD009DBD33 /* NSNotification+AQSEventTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotification+AQSEventTest.m"; sourceTree = "<group>"; };
+		D41020841A2D9AD4009DBD33 /* NSNotification_AQSEventTestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNotification_AQSEventTestTests.m; sourceTree = "<group>"; };
 		D45E93D41A14E6DF009EA945 /* AQSEvent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AQSEvent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45E93D81A14E6DF009EA945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D45E93D91A14E6DF009EA945 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -137,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				D45E93F31A14E6DF009EA945 /* AQSEventTests.m */,
+				D41020841A2D9AD4009DBD33 /* NSNotification_AQSEventTestTests.m */,
 				D45E93F11A14E6DF009EA945 /* Supporting Files */,
 			);
 			path = AQSEventTests;
@@ -157,6 +163,8 @@
 				D45E93FF1A14E7B0009EA945 /* AQSEvent.m */,
 				D45E94011A14E7E2009EA945 /* AQSEventObserver.h */,
 				D45E94021A14E7E2009EA945 /* AQSEventObserver.m */,
+				D41020811A2D98DD009DBD33 /* NSNotification+AQSEventTest.h */,
+				D41020821A2D98DD009DBD33 /* NSNotification+AQSEventTest.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -296,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D41020831A2D98DD009DBD33 /* NSNotification+AQSEventTest.m in Sources */,
 				D45E94001A14E7B0009EA945 /* AQSEvent.m in Sources */,
 				D45E94031A14E7E2009EA945 /* AQSEventObserver.m in Sources */,
 				D45E93E01A14E6DF009EA945 /* ViewController.m in Sources */,
@@ -308,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D41020851A2D9AD4009DBD33 /* NSNotification_AQSEventTestTests.m in Sources */,
 				D45E93F41A14E6DF009EA945 /* AQSEventTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

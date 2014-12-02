@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- *  A class that observes Bolt's measurement event as long as this class is retained.
+ *  A class that observes measurement events as long as this class is retained.
  */
 @interface AQSEventObserver : NSObject
 
